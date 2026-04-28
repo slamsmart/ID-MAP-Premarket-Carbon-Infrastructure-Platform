@@ -9,6 +9,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { useState } from 'react';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 const navLinks = [
   { label: 'Beranda', to: '/' },
@@ -183,16 +184,21 @@ export default function IDMAPLandingPage() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/user">
-              <button className="px-4 py-2 text-sm font-bold text-muted hover:text-text transition-colors cursor-pointer">
-                Masuk
-              </button>
-            </Link>
-            <Link to="/user">
-              <button className="px-5 py-2.5 text-sm font-bold bg-primary text-white rounded-xl hover:bg-primary-dark transition-all duration-200 cursor-pointer">
-                Daftar Sekarang
-              </button>
-            </Link>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="px-4 py-2 text-sm font-bold text-muted hover:text-text transition-colors cursor-pointer">
+                  Masuk
+                </button>
+              </SignInButton>
+              <SignInButton mode="modal">
+                <button className="px-5 py-2.5 text-sm font-bold bg-primary text-white rounded-xl hover:bg-primary-dark transition-all duration-200 cursor-pointer">
+                  Daftar Sekarang
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
           </div>
 
           <button
@@ -217,12 +223,17 @@ export default function IDMAPLandingPage() {
               </Link>
             ))}
             <div className="flex gap-3 pt-3 border-t border-border">
-              <Link to="/user" className="flex-1">
-                <button className="w-full px-4 py-2.5 text-sm font-bold border border-border rounded-xl text-muted hover:text-text cursor-pointer">Masuk</button>
-              </Link>
-              <Link to="/user" className="flex-1">
-                <button className="w-full px-4 py-2.5 text-sm font-bold bg-primary text-white rounded-xl cursor-pointer">Daftar</button>
-              </Link>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="flex-1 px-4 py-2.5 text-sm font-bold border border-border rounded-xl text-muted hover:text-text cursor-pointer">Masuk</button>
+                </SignInButton>
+                <SignInButton mode="modal">
+                  <button className="flex-1 px-4 py-2.5 text-sm font-bold bg-primary text-white rounded-xl cursor-pointer">Daftar</button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
             </div>
           </div>
         )}
