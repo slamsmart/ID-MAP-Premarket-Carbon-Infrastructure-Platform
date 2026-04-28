@@ -296,7 +296,7 @@ export default function IDMAPLandingPage() {
                   </div>
                 </div>
                 <span className="px-3 py-1 text-xs font-semibold text-primary bg-bg-soft rounded-full flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />Live Data
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />AI Estimated
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-3 mb-6">
