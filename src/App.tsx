@@ -5,7 +5,6 @@ import IDMAPVerifikatorDashboard from './pages/IDMAPVerifikatorDashboard';
 import TentangPage from './pages/TentangPage';
 import PetaMangrovePage from './pages/PetaMangrovePage';
 import ProgramPage from './pages/ProgramPage';
-import DampakPage from './pages/DampakPage';
 import EdukasiPage from './pages/EdukasiPage';
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
       <Route path="/tentang" element={<TentangPage />} />
       <Route path="/peta-mangrove" element={<PetaMangrovePage />} />
       <Route path="/program" element={<ProgramPage />} />
-      <Route path="/dampak" element={<DampakPage />} />
       <Route path="/edukasi" element={<EdukasiPage />} />
       <Route path="/admin" element={<IDMAPAdminDashboard />} />
       <Route path="/verifikator" element={<IDMAPVerifikatorDashboard />} />

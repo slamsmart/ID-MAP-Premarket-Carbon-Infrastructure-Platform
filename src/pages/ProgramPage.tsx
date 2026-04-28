@@ -136,7 +136,6 @@ const navLinks = [
   { label: 'Tentang', to: '/tentang' },
   { label: 'Platform', to: '/peta-mangrove' },
   { label: 'Marketplace', to: '/program' },
-  { label: 'Dampak', to: '/dampak' },
 ];
 
 const statusColors: Record<ProjectStatus, string> = {
@@ -247,7 +246,7 @@ export default function ProgramPage() {
             Marketplace
           </p>
           <h1 className="text-text mb-4" style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.1, letterSpacing: '-1.2px' }}>
-            Carbon Project Marketplace
+            Carbon Project Listing
           </h1>
           <p className="text-muted max-w-2xl mx-auto mb-10" style={{ fontSize: 16, lineHeight: 1.7 }}>
             Temukan proyek karbon terverifikasi. Dukung via QRIS sebagai kontributor atau hubungi tim untuk pembelian kredit karbon korporasi.
