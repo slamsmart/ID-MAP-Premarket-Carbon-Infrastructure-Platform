@@ -5,7 +5,7 @@ import {
   CheckCircle2, Globe, Banknote, Activity, Map,
   ExternalLink, Share2, Play, MessageCircle, Layers, ScanSearch,
   Users, FileCheck, Building2, Leaf, Target, Heart, TrendingUp,
-  ArrowDown, ClipboardCheck, Scale, Award,
+  ArrowDown, ClipboardCheck, Award,
   ChevronRight
 } from 'lucide-react';
 import { useState } from 'react';
@@ -16,7 +16,6 @@ const navLinks = [
   { label: 'Tentang', to: '/tentang' },
   { label: 'Platform', to: '/peta-mangrove' },
   { label: 'Marketplace', to: '/program' },
-  { label: 'Dampak', to: '/dampak' },
 ];
 
 const kpiCards = [
@@ -85,28 +84,7 @@ const intelligenceFeatures = [
   { icon: <Activity className="w-5 h-5" />, label: 'Impact Tracking' },
 ];
 
-const advantages = [
-  {
-    icon: <Coins className="w-6 h-6" />,
-    title: 'Pendapatan Platform',
-    desc: 'Fee dari onboarding proyek, MRV, transaksi marketplace, QRIS, dan langganan SaaS.',
-  },
-  {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    title: 'Kredibilitas & Kepercayaan',
-    desc: 'Proyek terverifikasi, sesuai standar SRN dan regulasi pemerintah.',
-  },
-  {
-    icon: <Scale className="w-6 h-6" />,
-    title: 'Skalabilitas',
-    desc: 'Dapat menangani banyak proyek & pembeli dalam satu platform.',
-  },
-  {
-    icon: <Activity className="w-6 h-6" />,
-    title: 'Dampak Nyata',
-    desc: 'Menghubungkan pendanaan, konservasi, dan pasar karbon.',
-  },
-];
+
 
 
 
@@ -155,7 +133,7 @@ const footerLinkMap: Record<string, string> = {
   'Beranda': '/',
   'Platform': '/peta-mangrove',
   'Marketplace': '/program',
-  'Dampak': '/dampak',
+
   'Tentang ID-MAP': '/tentang',
   'Tim': '/tentang',
   'Mitra': '/tentang',
@@ -244,7 +222,7 @@ export default function IDMAPLandingPage() {
         <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-primary mb-5" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' as const }}>
-              Pre-Market Carbon Infrastructure
+              Pre-Market Carbon Infrastructure Platform
             </p>
             <h1 className="text-text mb-6" style={{ fontSize: 56, fontWeight: 700, lineHeight: 1.1, letterSpacing: '-1.5px' }}>
               Infrastruktur Digital untuk Pasar Karbon Indonesia
@@ -465,25 +443,7 @@ export default function IDMAPLandingPage() {
         </div>
       </section>
 
-      {/* ─── KEUNTUNGAN ID-MAP ─── */}
-      <section className="bg-deep text-white" style={{ padding: '60px 24px' }}>
-        <div className="max-w-[1200px] mx-auto">
-          <p className="text-center text-primary font-bold mb-8" style={{ fontSize: 14, letterSpacing: '1px', textTransform: 'uppercase' as const }}>
-            Keuntungan ID-MAP
-          </p>
-          <div className="grid md:grid-cols-4 gap-6">
-            {advantages.map((adv) => (
-              <div key={adv.title} className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mx-auto mb-3">
-                  {adv.icon}
-                </div>
-                <h4 className="text-sm font-bold text-white mb-2">{adv.title}</h4>
-                <p className="text-xs text-gray-400" style={{ lineHeight: 1.7 }}>{adv.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
 
 
@@ -592,7 +552,7 @@ export default function IDMAPLandingPage() {
               </div>
             </div>
             {[
-              { title: 'Platform', links: ['Beranda', 'Platform', 'Marketplace', 'Dampak'] },
+              { title: 'Platform', links: ['Beranda', 'Platform', 'Marketplace'] },
               { title: 'Tentang', links: ['Tentang ID-MAP', 'Tim', 'Mitra'] },
               { title: 'Bantuan', links: ['FAQ', 'Panduan', 'Kontak Kami', 'Kebijakan Privasi'] },
             ].map((col) => (
