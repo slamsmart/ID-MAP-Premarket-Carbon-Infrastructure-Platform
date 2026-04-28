@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import {
-  Satellite, ShieldCheck, QrCode, Cpu,
+  Satellite, ShieldCheck, Cpu,
   Store, TreePine, Coins, FolderKanban, ArrowRight,
   CheckCircle2, Globe, Banknote, Activity, Map,
   ExternalLink, Share2, Play, MessageCircle, Layers, ScanSearch,
   Users, FileCheck, Building2, Leaf, Target, Heart, TrendingUp,
-  ArrowDown, ClipboardCheck, Scale, BarChart3, Award,
-  FileText, Search, ChevronRight, Repeat, Receipt
+  ArrowDown, ClipboardCheck, Scale, Award,
+  ChevronRight
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -107,30 +107,7 @@ const advantages = [
   },
 ];
 
-const revenueStreams = [
-  { icon: <FileText className="w-5 h-5" />, title: 'Project Onboarding & Development Fee', desc: 'Biaya untuk feasibility, persiapan dokumen, dan pengembangan proyek.' },
-  { icon: <Search className="w-5 h-5" />, title: 'MRV & Verification Fee', desc: 'Biaya monitoring, verifikasi, dan audit trail untuk menjamin kredibilitas proyek.' },
-  { icon: <Store className="w-5 h-5" />, title: 'Marketplace Transaction Fee', desc: 'Komisi dari transaksi penjualan kredit karbon di marketplace.' },
-  { icon: <QrCode className="w-5 h-5" />, title: 'QRIS Transaction Fee', desc: 'Biaya layanan dari setiap transaksi donasi / kontribusi masyarakat via QRIS.' },
-  { icon: <BarChart3 className="w-5 h-5" />, title: 'SaaS / Data & Analytics Subscription', desc: 'Langganan dashboard, reporting, dan data intelligence untuk korporasi/NGO.' },
-  { icon: <Receipt className="w-5 h-5" />, title: 'Impact & ESG Reporting Service', desc: 'Layanan pembuatan laporan dampak & ESG bagi korporasi dan investor.' },
-];
 
-const srnProcess = [
-  { step: 1, title: 'Pengajuan Dokumen oleh ID-MAP', desc: 'ID-MAP siapkan & submit dokumen proyek ke SRN.' },
-  { step: 2, title: 'Review Administrasi (MENLHK)', desc: 'KLHK (MENLHK) melakukan pemeriksaan kelengkapan.' },
-  { step: 3, title: 'Review Teknis (MENLHK)', desc: 'Evaluasi kesesuaian metodologi, MRV, social & environmental.' },
-  { step: 4, title: 'Keputusan (MENLHK)', desc: 'Disetujui / Revisi / Ditolak.' },
-  { step: 5, title: 'Penerbitan Unit Karbon di SRN', desc: 'Jika disetujui, unit karbon resmi diterbitkan.' },
-];
-
-const carbonTradeSteps = [
-  'Corporate membeli unit karbon di Marketplace ID-MAP',
-  'Transaksi tercatat di ID-MAP (ledger)',
-  'ID-MAP laporkan perpindahan kepemilikan unit ke SRN',
-  'SRN mencatat transfer unit ke akun pembeli (corporate)',
-  'Corporate dapat melakukan retirement unit untuk klaim ESG',
-];
 
 const whyCards = [
   {
@@ -497,100 +474,7 @@ export default function IDMAPLandingPage() {
         </div>
       </section>
 
-      {/* ─── REVENUE STREAMS ─── */}
-      <section className="bg-white" style={{ padding: '80px 24px' }}>
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary mb-3" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' as const }}>
-              Revenue Streams
-            </p>
-            <h2 className="text-text" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.8px' }}>
-              Keuntungan & Pendapatan ID-MAP
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {revenueStreams.map((rev) => (
-              <div key={rev.title} className="bg-white rounded-2xl border border-border p-6 transition-all duration-200 hover:-translate-y-1" style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
-                <div className="w-10 h-10 bg-bg-soft rounded-xl flex items-center justify-center text-primary mb-4">{rev.icon}</div>
-                <h4 className="text-sm font-bold text-text mb-2">{rev.title}</h4>
-                <p className="text-xs text-muted" style={{ lineHeight: 1.7 }}>{rev.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ─── PROSES PENDAFTARAN KE SRN ─── */}
-      <section className="bg-bg" style={{ padding: '80px 24px' }}>
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary mb-3" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' as const }}>
-              SRN Registration
-            </p>
-            <h2 className="text-text mb-4" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.8px' }}>
-              Proses Pendaftaran ke SRN
-            </h2>
-            <p className="text-muted max-w-xl mx-auto" style={{ fontSize: 14, lineHeight: 1.7 }}>
-              ID-MAP memfasilitasi seluruh proses — persetujuan akhir tetap berada pada MENLHK (KLHK) sesuai regulasi.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {srnProcess.map((s, idx) => (
-              <div key={s.step} className="flex items-center gap-3">
-                <div className="bg-white rounded-2xl border border-border p-4 w-52 text-center" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.04)' }}>
-                  <span className="inline-flex w-7 h-7 bg-primary text-white rounded-lg items-center justify-center text-xs font-bold mb-2">
-                    {s.step}
-                  </span>
-                  <h4 className="text-xs font-bold text-text mb-1">{s.title}</h4>
-                  <p className="text-xs text-muted" style={{ lineHeight: 1.5 }}>{s.desc}</p>
-                </div>
-                {idx < srnProcess.length - 1 && (
-                  <ChevronRight className="w-4 h-4 text-primary/40 hidden md:block shrink-0" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── ALUR CARBON TRADE CORPORATE ─── */}
-      <section className="bg-white" style={{ padding: '80px 24px' }}>
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary mb-3" style={{ fontSize: 12, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' as const }}>
-              Carbon Trade Cycle
-            </p>
-            <h2 className="text-text mb-4" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.8px' }}>
-              Alur Data Setelah Pembelian oleh Corporate
-            </h2>
-          </div>
-
-          <div className="bg-bg rounded-3xl border border-border p-8" style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
-            <div className="flex flex-wrap justify-center items-start gap-4">
-              {carbonTradeSteps.map((step, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div className="bg-white rounded-2xl border border-border p-4 w-44 text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary mx-auto mb-2">
-                      <span className="text-xs font-bold">{idx + 1}</span>
-                    </div>
-                    <p className="text-xs text-text font-medium" style={{ lineHeight: 1.5 }}>{step}</p>
-                  </div>
-                  {idx < carbonTradeSteps.length - 1 && (
-                    <ChevronRight className="w-4 h-4 text-primary/40 hidden md:block shrink-0" />
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center mt-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-xs font-semibold text-primary">
-                <Repeat className="w-4 h-4" />
-                Diulang Setiap Tahun
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── WHY ID-MAP ─── */}
       <section className="bg-bg" style={{ padding: '80px 24px' }}>
@@ -627,7 +511,7 @@ export default function IDMAPLandingPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {impactStats.map((stat) => (
               <div key={stat.label} className="text-center p-6 rounded-2xl border border-white/10 bg-white/5">
-                <p className="text-4xl font-extrabold text-primary mb-2">{stat.value}</p>
+                <p className="text-4xl font-extrabold text-white mb-2">{stat.value}</p>
                 <p className="text-sm text-gray-400">{stat.label}</p>
               </div>
             ))}
